@@ -46,7 +46,7 @@ Python 3.11+ 와 JDK(`patch.toml` 의 `build.java` 이상)가 필요합니다. �
 | `side` | `server` · `client` · `both`. `both` 는 서버와 플레이어 쪽에 같이 들어가야 합니다 |
 | `[build]` | `java`, `neoforge`(설치 버전), `libraries`(그 설치의 `libraries/` 아래 경로), `[[build.modrinth]]`(project·version) |
 | `[[targets]]` | `mod`, `supported_versions`, `fixed_in` |
-| `[[fixes]]` | 고치는 문제 하나: `id`, `since`, `summary`, `crash`(예외·스택 프레임), `upstream`(원작자 이슈·PR 링크) |
+| `[[fixes]]` | 고치는 문제 하나: `id`, `since`, `summary`, `crash`(예외·스택 프레임), `upstream`(원작자 이슈·PR 링크 목록) |
 
 `supported_versions` 와 `fixed_in` 은 뜻이 다릅니다.
 

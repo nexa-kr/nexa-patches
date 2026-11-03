@@ -23,4 +23,4 @@ id = "soul-elytra-cooldown-field"
 since = "held"
 summary = "Elytra Slot 이 Deeper Darker 1.4.1 에서 없어진 static 필드 soulElytraCooldown 을 읽는다(서버 로그 오류, 클라이언트 크래시 가능)"
 crash = { kind = "exception", exception = "java.lang.NoSuchFieldError: Class com.kyanite.deeperdarker.DeeperDarkerConfig does not have member field 'int soulElytraCooldown'", frames = ["com.illusivesoulworks.elytraslot.common.integration.deeperdarker.SoulElytraBoostPayload", "com.illusivesoulworks.elytraslot.common.integration.deeperdarker.DeeperDarkerPlugin.tick"] }
-upstream = ""
+upstream = []  # 아직 안 올림
