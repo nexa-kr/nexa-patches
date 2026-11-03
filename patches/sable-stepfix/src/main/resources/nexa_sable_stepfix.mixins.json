@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "kr.nexa.sablestepfix.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ActiveSableCompanionMixin",
+    "FragileBlockCallbackMixin",
+    "SubLevelPhysicsSystemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

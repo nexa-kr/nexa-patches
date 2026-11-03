@@ -1,0 +1,26 @@
+# 보류 중인 패치: 빌드·배포하지 않는다. 다시 낼 조건은 HELD.md.
+id = "elytraslot-deeperdarker"
+name = "Elytra Slot × Deeper Darker 영혼 겉날개 호환"
+mod_id = "nexa_sable_stepfix"   # 원래 sable-stepfix 1.0.1 안에 있었다. 다시 낼 때는 따로 jar 로 뺀다
+version = "0.0.0"
+status = "held"
+side = "both"
+minecraft = "1.21.1"
+loader = "neoforge"
+
+[[targets]]
+mod = "elytraslot"
+supported_versions = ["9.0.2+1.21.1"]
+fixed_in = []
+
+[[targets]]
+mod = "deeperdarker"
+supported_versions = ["1.4.1-neoforge-1.21.1"]
+fixed_in = []
+
+[[fixes]]
+id = "soul-elytra-cooldown-field"
+since = "held"
+summary = "Elytra Slot 이 Deeper Darker 1.4.1 에서 없어진 static 필드 soulElytraCooldown 을 읽는다(서버 로그 오류, 클라이언트 크래시 가능)"
+crash = { kind = "exception", exception = "java.lang.NoSuchFieldError: Class com.kyanite.deeperdarker.DeeperDarkerConfig does not have member field 'int soulElytraCooldown'", frames = ["com.illusivesoulworks.elytraslot.common.integration.deeperdarker.SoulElytraBoostPayload", "com.illusivesoulworks.elytraslot.common.integration.deeperdarker.DeeperDarkerPlugin.tick"] }
+upstream = ""

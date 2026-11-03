@@ -1,0 +1,30 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "nexa_sable_stepfix"
+version = "1.0.2"
+displayName = "Nexa Sable Step Fix"
+authors = "Nexa"
+description = '''
+Server-side fixes for the Skybound pack.
+1.0.0 - Sable 2.0.6: fragile block breaks raised inside the native physics step are deferred
+until the step ends, avoiding a self-deadlock in Rapier3D.newVoxelCollider (watchdog crash).
+1.0.1 - Sable 2.0.6: ActiveSableCompanion.getVelocity returns zero for a sub-level body that was
+already removed instead of throwing "Body has been removed" (Ticking entity crash).
+1.0.2 - Elytra Slot soul elytra compat removed again: fixing it on the server alone lets the
+cooldown reach unpatched clients, whose Elytra Slot tick reads the same missing field (client crash).
+'''
+# 서버 전용 — 클라이언트에 없어도 접속된다(레지스트리·네트워크 채널 없음).
+displayTest = "IGNORE_ALL_VERSION"
+
+[[mixins]]
+config = "nexa_sable_stepfix.mixins.json"
+
+[[dependencies.nexa_sable_stepfix]]
+modId = "sable"
+type = "required"
+versionRange = "[2.0.6,2.1)"
+ordering = "AFTER"
+side = "BOTH"

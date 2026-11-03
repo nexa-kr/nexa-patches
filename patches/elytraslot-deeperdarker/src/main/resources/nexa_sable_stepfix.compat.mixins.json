@@ -1,0 +1,11 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "kr.nexa.sablestepfix.compat.mixin",
+  "plugin": "kr.nexa.sablestepfix.compat.CompatMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "elytraslot.DeeperDarkerPluginMixin",
+    "elytraslot.SoulElytraBoostPayloadMixin"
+  ]
+}

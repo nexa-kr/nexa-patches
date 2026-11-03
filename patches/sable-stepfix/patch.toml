@@ -1,0 +1,50 @@
+# 패치 메타데이터. 형식은 README.md "patch.toml" 절.
+id = "sable-stepfix"
+name = "Nexa Sable Step Fix"
+mod_id = "nexa_sable_stepfix"
+version = "1.0.2"          # src/main/resources/META-INF/neoforge.mods.toml 의 version 과 같아야 한다(빌드가 확인)
+status = "active"          # active | held | retired
+side = "server"            # server | client | both
+minecraft = "1.21.1"
+loader = "neoforge"
+
+[build]
+java = 21
+neoforge = "21.1.248"      # 이 버전 설치 프로그램의 서버 설치(libraries/)를 클래스패스로 쓴다
+libraries = [
+  "net/minecraft/server/1.21.1-20240808.144430/server-1.21.1-20240808.144430-srg.jar",
+  "net/neoforged/neoforge/21.1.248/neoforge-21.1.248-universal.jar",
+  "net/neoforged/fancymodloader/loader/4.0.43/loader-4.0.43.jar",
+  "net/neoforged/bus/8.0.5/bus-8.0.5.jar",
+  "net/fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/sponge-mixin-0.15.2+mixin.0.8.7.jar",
+  "org/ow2/asm/asm/9.10.1/asm-9.10.1.jar",
+  "org/ow2/asm/asm-tree/9.10.1/asm-tree-9.10.1.jar",
+  "com/mojang/logging/1.2.7/logging-1.2.7.jar",
+  "org/joml/joml/1.10.5/joml-1.10.5.jar",
+  "org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar",
+]
+
+[[build.modrinth]]
+project = "sable"
+version = "2.0.6+mc1.21.1"
+
+# 고치는 대상 모드. supported_versions 는 이 패치가 맞다고 확인한 버전, fixed_in 은 원작자가 고쳤다고
+# (커밋·재현 시험으로) 확인한 버전. 범위 밖 버전은 "미확인"일 뿐 고쳐졌다는 뜻이 아니다.
+[[targets]]
+mod = "sable"
+supported_versions = ["2.0.6+mc1.21.1"]
+fixed_in = []
+
+[[fixes]]
+id = "fragile-break-in-physics-step"
+since = "1.0.0"
+summary = "물리 스텝 안에서 일어난 깨지는 블록 파괴를 스텝이 끝난 뒤로 미뤄 Rapier3D.newVoxelCollider 자기 교착(서버 watchdog 종료)을 피한다"
+crash = { kind = "watchdog", frames = ["dev.ryanhcode.sable.physics.callback.FragileBlockCallback", "newVoxelCollider"] }
+upstream = ""
+
+[[fixes]]
+id = "removed-body-velocity"
+since = "1.0.1"
+summary = "이미 제거된 하위 레벨 강체의 속도를 물으면 예외 대신 0 을 돌려준다"
+crash = { kind = "exception", exception = "java.lang.RuntimeException: Body has been removed", frames = ["dev.ryanhcode.sable.physics.impl.rapier.RapierPhysicsPipeline.assertBodyValid", "dev.ryanhcode.sable.ActiveSableCompanion.getVelocity"] }
+upstream = ""
