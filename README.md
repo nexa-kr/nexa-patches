@@ -29,7 +29,8 @@ python3 tools/build.py --all           # status = "active" 전부
 
 Python 3.11+ 와 JDK(`patch.toml` 의 `build.java` 이상)가 필요합니다. 클래스패스는 NeoForge 설치 프로그램의
 서버 설치(`maven.neoforged.net`, 바닐라 서버는 Mojang 에서)와 Modrinth 모드 jar(sha512 확인)로 만들고
-`~/.cache/nexa-patches`(`NEXA_PATCHES_CACHE`)에 둡니다. jar 항목 시각을 고정해 같은 원본이면 같은 jar 가 나옵니다.
+`~/.cache/nexa-patches`(`NEXA_PATCHES_CACHE`)에 둡니다. jar 항목 시각을 고정해 같은 원본이면 클래스 파일이 같게 나옵니다
+(`MANIFEST.MF` 의 `Created-By` 는 JDK 빌드마다 달라 jar 전체 sha256 은 JDK 가 같을 때만 같습니다).
 
 ## 릴리스
 

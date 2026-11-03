@@ -140,7 +140,7 @@ def build(patch_id: str) -> Path:
     )
     shutil.copytree(src / "main/resources", classes, dirs_exist_ok=True)
     jar = out / f"{meta['mod_id']}-{version}.jar"
-    # 같은 원본이면 같은 jar 가 나오게 항목 시각을 고정한다.
+    # 같은 원본이면 같은 클래스 파일이 나오게 항목 시각을 고정한다(MANIFEST 의 Created-By 는 JDK 마다 다르다).
     subprocess.run([jdk_tool("jar"), "--create", "--date=2000-01-01T00:00:00Z", "--file", str(jar), "-C", str(classes), "."], check=True)
     digest = hashlib.sha256(jar.read_bytes()).hexdigest()
     print(f"{digest}  {jar.relative_to(ROOT)}")
