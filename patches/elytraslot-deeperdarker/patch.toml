@@ -23,6 +23,5 @@ id = "soul-elytra-cooldown-field"
 since = "held"
 summary = "Elytra Slot 이 Deeper Darker 1.4.1 에서 없어진 static 필드 soulElytraCooldown 을 읽는다(서버 로그 오류, 클라이언트 크래시 가능)"
 crash = { kind = "exception", exception = "java.lang.NoSuchFieldError: Class com.kyanite.deeperdarker.DeeperDarkerConfig does not have member field 'int soulElytraCooldown'", frames = ["com.illusivesoulworks.elytraslot.common.integration.deeperdarker.SoulElytraBoostPayload", "com.illusivesoulworks.elytraslot.common.integration.deeperdarker.DeeperDarkerPlugin.tick"] }
-# 이미 다른 사람이 보고했고(elytraslot#176, DeeperAndDarker#531) 같은 수정 PR(elytraslot#178)이 열려 있어 우리는 PR 을 내지 않는다(2026-11-04 👍 만).
-# #178 이 합쳐진 Elytra Slot 이 나오면 이 패치는 retired.
+# 같은 수정이 elytraslot#178 로 올라가 있다. 그게 들어간 Elytra Slot 이 나오면 retired.
 upstream = ["https://github.com/illusivesoulworks/elytraslot/issues/176", "https://github.com/KyaniteMods/DeeperAndDarker/issues/531", "https://github.com/illusivesoulworks/elytraslot/pull/178"]

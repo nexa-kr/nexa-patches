@@ -1,4 +1,3 @@
-# 패치 메타데이터. 형식은 README.md "patch.toml" 절.
 id = "sable-stepfix"
 name = "Nexa Sable Step Fix"
 mod_id = "nexa_sable_stepfix"
@@ -40,11 +39,11 @@ id = "fragile-break-in-physics-step"
 since = "1.0.0"
 summary = "물리 스텝 안에서 일어난 깨지는 블록 파괴를 스텝이 끝난 뒤로 미뤄 Rapier3D.newVoxelCollider 자기 교착(서버 watchdog 종료)을 피한다"
 crash = { kind = "watchdog", frames = ["dev.ryanhcode.sable.physics.callback.FragileBlockCallback", "newVoxelCollider"] }
-upstream = ["https://github.com/ryanhcode/sable/issues/1603", "https://github.com/ryanhcode/sable/pull/1632"] # 2026-11-04 둘 다 열림, PR 에 운영 근거 댓글
+upstream = ["https://github.com/ryanhcode/sable/issues/1603", "https://github.com/ryanhcode/sable/pull/1632"]
 
 [[fixes]]
 id = "removed-body-velocity"
 since = "1.0.1"
 summary = "이미 제거된 하위 레벨 강체의 속도를 물으면 예외 대신 0 을 돌려준다"
 crash = { kind = "exception", exception = "java.lang.RuntimeException: Body has been removed", frames = ["dev.ryanhcode.sable.physics.impl.rapier.RapierPhysicsPipeline.assertBodyValid", "dev.ryanhcode.sable.ActiveSableCompanion.getVelocity"] }
-upstream = ["https://github.com/ryanhcode/sable/issues/1454"] # 같은 예외(다른 호출 경로). 2026-11-04 댓글로 알리고 PR 을 원하는지 물음
+upstream = ["https://github.com/ryanhcode/sable/issues/1454"]

@@ -16,6 +16,6 @@
 - 같은 문제가 이미 보고돼 있다: [elytraslot#176](https://github.com/illusivesoulworks/elytraslot/issues/176),
   [DeeperAndDarker#531](https://github.com/KyaniteMods/DeeperAndDarker/issues/531).
 - 같은 수정 PR [elytraslot#178](https://github.com/illusivesoulworks/elytraslot/pull/178)(2026-05-04)이 열려 있다
-  (`DeeperDarkerConfig.CONFIG.soulElytraCooldown.getAsInt()` 로 바꿈). 중복이라 우리 PR 은 내지 않고 👍 만 남겼다.
+  (`DeeperDarkerConfig.CONFIG.soulElytraCooldown.getAsInt()` 로 바꿈). 중복이라 우리 PR 은 내지 않았다.
   Elytra Slot 저장소는 2025-07 이후 커밋이 없어 언제 합쳐질지 모른다.
 - #178 이 들어간 Elytra Slot 이 나오면 이 패치는 `retired`.

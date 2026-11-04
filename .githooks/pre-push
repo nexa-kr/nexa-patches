@@ -1,5 +1,0 @@
-#!/bin/sh
-# 전역 pre-push 훅(core.hooksPath 를 바꾸면 가려진다)이 있으면 그대로 돌린다.
-g="$HOME/.codex/git-hooks/pre-push"
-[ -x "$g" ] && exec "$g" "$@"
-exit 0
